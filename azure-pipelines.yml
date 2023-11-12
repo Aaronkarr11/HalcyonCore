@@ -27,6 +27,7 @@ steps:
   inputs:
     command: 'build'
     projects: '**/*.csproj'
+    arguments: -r release
         
 - task: NuGetCommand@2
   inputs:
