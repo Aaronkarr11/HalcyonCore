@@ -27,7 +27,9 @@ steps:
   inputs:
     command: 'build'
     projects: '**/*.csproj'
-    
+    arguments: '-o $(Build.ArtifactStagingDirectory)'
+
+        
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
