@@ -36,8 +36,9 @@ steps:
     command: pack
     packagesToPack: '**/*.csproj'
     nobuild: true
-    versioningScheme: off
-    versionEnvVar: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
+    versionEnvVar: 1.0.0.$(Rev:r)
+    versioningScheme: byEnvVar
+    
 
 
 
