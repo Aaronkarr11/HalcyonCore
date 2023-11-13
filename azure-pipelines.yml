@@ -28,7 +28,7 @@ steps:
   displayName: 'dotnet build'
   inputs:
     command: 'build'
-    projects: '**\\HalcyonCore.sln'
+    projects: '**/*.csproj'
         
 - task: DotNetCoreCLI@2
   displayName: 'dotnet pack'
