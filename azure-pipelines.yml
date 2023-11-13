@@ -36,7 +36,10 @@ steps:
     command: pack
     packagesToPack: '**/*.csproj'
     nobuild: true
-    versioningScheme: byBuildNumber
+    versioningScheme: off
+    versionEnvVar: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
+
+
 
 - task: NuGetCommand@2
   displayName: 'push'
