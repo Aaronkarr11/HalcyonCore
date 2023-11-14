@@ -26,7 +26,7 @@ steps:
   inputs:
     command: 'build'
     projects: '**/*.csproj'
-    arguments: -c release -o '$(Build.ArtifactStagingDirectory)'
+    arguments: -c release -f net6.0
         
 # Package a project
 - task: NuGetCommand@2
