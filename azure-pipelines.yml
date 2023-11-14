@@ -30,22 +30,11 @@ steps:
     command: 'build'
     projects: '**/*.csproj'
         
-    
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
     versioningScheme: 'byBuildNumber'
-    
-- task: NuGetCommand@2
-  inputs:
-    command: 'pack'
-    packagesToPack: '**/*.csproj'
-    versioningScheme: byBuildNumber
-    majorVersion: '1'
-    minorVersion: '0'
-    patchVersion: '0'
-    packTimezone: 'local'
 
 - task: NuGetCommand@2
   displayName: 'push'
