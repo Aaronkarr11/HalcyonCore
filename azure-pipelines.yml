@@ -30,12 +30,14 @@ steps:
     command: 'build'
     projects: '**/*.csproj'
         
+# Package a project
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
-    versioningScheme: 'byBuildNumber'
-
+    packDestination: '$(Build.ArtifactStagingDirectory)'
+    versionEnvVar: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
+    versioningScheme: byEnvVar
 - task: NuGetCommand@2
   displayName: 'push'
   inputs:
