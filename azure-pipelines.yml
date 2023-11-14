@@ -38,7 +38,7 @@ steps:
     command: 'pack'
     packagesToPack: '**/*.csproj'
     packDestination: '$(Build.ArtifactStagingDirectory)'
-    versioningScheme: byBuildNumber
+    versioningScheme: byEnvVar
 
 - task: NuGetCommand@2
   displayName: 'push'
