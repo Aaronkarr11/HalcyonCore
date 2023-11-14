@@ -30,16 +30,12 @@ steps:
     command: 'build'
     projects: '**/*.csproj'
         
-- task: DotNetCoreCLI@2
-  displayName: 'dotnet pack'
-  inputs:
-    command: pack
-    packagesToPack: '**/*.csproj'
-    nobuild: true
-    versionEnvVar: 1.0.0.$(Rev:r)
-    versioningScheme: byEnvVar
     
-
+- task: NuGetCommand@2
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    versioningScheme: 'byBuildNumber'
 
 
 - task: NuGetCommand@2
