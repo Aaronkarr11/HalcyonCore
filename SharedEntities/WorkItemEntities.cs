@@ -133,15 +133,28 @@ namespace HalcyonCore.SharedEntities
 		public int Completed { get; set; }
 	}
 
-	public class OperationModelTableTemplate
-	{
-		public string Title { get; set; }
-		public string DeviceName { get; set; }
-		public DateTime? StartDate { get; set; }
-		public DateTime? TargetDate { get; set; }
-		public string Description { get; set; }
-		public string Icon { get; set; }
-		public int Completed { get; set; }
+    public class ErrorLogModel
+    {
+        public string Message { get; set; }
+        public DateTime? ErrorDate { get; set; }
+        public string PartitionKey { get; set; }
+        public string RowKey { get; set; }
+    }
+
+    public class ErrorLogTableEntity : ITableEntity
+    {
+        public string Message { get; set; }
+        public DateTime? ErrorDate { get; set; }
+        public string PartitionKey { get; set; }
+        public string RowKey { get; set; }
+        public DateTimeOffset? Timestamp { get; set; }
+        public ETag ETag { get; set; }
+    }
+
+    public class ErrorLogModelTableTemplate
+    {
+        public string Message { get; set; }
+        public DateTime? ErrorDate { get; set; }
         public string PartitionKey { get; set; }
         public string RowKey { get; set; }
     }
