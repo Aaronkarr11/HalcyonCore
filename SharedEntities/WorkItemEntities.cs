@@ -137,6 +137,7 @@ namespace HalcyonCore.SharedEntities
     {
         public string Message { get; set; }
         public DateTime? ErrorDate { get; set; }
+        public string DeviceName { get; set; }
         public string PartitionKey { get; set; }
         public string RowKey { get; set; }
     }
@@ -145,6 +146,7 @@ namespace HalcyonCore.SharedEntities
     {
         public string Message { get; set; }
         public DateTime? ErrorDate { get; set; }
+        public string DeviceName { get; set; }
         public string PartitionKey { get; set; }
         public string RowKey { get; set; }
         public DateTimeOffset? Timestamp { get; set; }
@@ -155,6 +157,7 @@ namespace HalcyonCore.SharedEntities
     {
         public string Message { get; set; }
         public DateTime? ErrorDate { get; set; }
+        public string DeviceName { get; set; }
         public string PartitionKey { get; set; }
         public string RowKey { get; set; }
     }
