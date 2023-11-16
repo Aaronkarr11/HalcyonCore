@@ -204,11 +204,9 @@ namespace HalcyonCore.Clients
             }
             catch (Exception ex)
             {
-
                 return ex.Message;
             }
         }
-
 
 
         public async Task<string> CreateRequestItem(RequestItemsTableTemplate requestItemRequest)

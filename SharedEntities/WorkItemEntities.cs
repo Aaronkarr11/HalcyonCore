@@ -135,6 +135,8 @@ namespace HalcyonCore.SharedEntities
 
     public class ErrorLogModel
     {
+        public string MethodName { get; set; }
+        public string ClassName { get; set; }
         public string Message { get; set; }
         public DateTime? ErrorDate { get; set; }
         public string DeviceName { get; set; }
@@ -144,6 +146,8 @@ namespace HalcyonCore.SharedEntities
 
     public class ErrorLogTableEntity : ITableEntity
     {
+        public string MethodName { get; set; }
+        public string ClassName { get; set; }
         public string Message { get; set; }
         public DateTime? ErrorDate { get; set; }
         public string DeviceName { get; set; }
@@ -155,6 +159,8 @@ namespace HalcyonCore.SharedEntities
 
     public class ErrorLogModelTableTemplate
     {
+        public string MethodName { get; set; }
+        public string ClassName { get; set; }
         public string Message { get; set; }
         public DateTime? ErrorDate { get; set; }
         public string DeviceName { get; set; }
