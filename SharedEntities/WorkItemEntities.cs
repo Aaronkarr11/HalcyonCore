@@ -62,8 +62,6 @@ namespace HalcyonCore.SharedEntities
 	{
         public string PartitionKey { get; set; }
 		public string RowKey { get; set; }
-		public string ParentPartitionKey { get; set; }
-		public string ParentRowKey { get; set; }
 		public string DeviceName { get; set; }
 		public string State { get; set; }
 		public string Title { get; set; }
@@ -98,8 +96,6 @@ namespace HalcyonCore.SharedEntities
 	{
 		public string PartitionKey { get; set; }
 		public string RowKey { get; set; }
-		public string ParentPartitionKey { get; set; }
-		public string ParentRowKey { get; set; }
 		public string DeviceName { get; set; }
 		public string State { get; set; }
 		public string Title { get; set; }
@@ -187,8 +183,6 @@ namespace HalcyonCore.SharedEntities
 	{
 		public string DeviceName { get; set; }
 		public string State { get; set; }
-		public string ParentPartitionKey { get; set; }
-		public string ParentRowKey { get; set; }
 		public string Title { get; set; }
 		public DateTime? StartDate { get; set; }
 		public DateTime? TargetDate { get; set; }
@@ -205,8 +199,6 @@ namespace HalcyonCore.SharedEntities
 	{
 		public string DeviceName { get; set; }
 		public string State { get; set; }
-		public string ParentPartitionKey { get; set; }
-		public string ParentRowKey { get; set; }
 		public string Title { get; set; }
 		public DateTime? StartDate { get; set; }
 		public DateTime? TargetDate { get; set; }

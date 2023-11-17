@@ -1,6 +1,7 @@
 ﻿using HalcyonCore.Interfaces;
 using HalcyonCore.SharedEntities;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Text;
 
 namespace HalcyonCore.Clients
@@ -101,11 +102,11 @@ namespace HalcyonCore.Clients
         }
 
 
-        public async Task<List<OperationHierarchy>> GetWorkItemHierarchy(string deviceName)
+        public async Task<List<ProjectHierarchy>> GetWorkItemHierarchy(string deviceName)
         {
             try
             {
-                OperationModel model = new OperationModel();
+                ProjectModel model = new ProjectModel();
                 model.DeviceName = deviceName;
                 string content = JsonConvert.SerializeObject(model);
 
@@ -113,7 +114,7 @@ namespace HalcyonCore.Clients
                 var stringContent = new StringContent(content, Encoding.UTF8, "application/json");
                 var stringResponse = await _client.PostAsync(uri, stringContent);
                 var rawResponse = stringResponse.Content.ReadAsStringAsync().Result;
-                var result = JsonConvert.DeserializeObject<List<OperationHierarchy>>(rawResponse);
+                var result = JsonConvert.DeserializeObject<List<ProjectHierarchy>>(rawResponse);
                 return result;
             }
             catch (Exception ex)
@@ -145,29 +146,34 @@ namespace HalcyonCore.Clients
             }
         }
 
-        public async Task<List<OperationModel>> GetOperationList(string deviceName)
+        public async Task<List<ProjectModel>> GetProjectList(string deviceName)
         {
             try
             {
-                OperationModel model = new OperationModel();
+                ProjectModel model = new ProjectModel();
                 model.DeviceName = deviceName;
                 string content = JsonConvert.SerializeObject(model);
 
-                string uri = "https://halcyontransactions.azurewebsites.net/api/GetOperations?code=RNHEMNxqc5Q6uOooFdmLCW1TTM8_WrLJrJIG4Q4F7upsAzFuKcrxlg==";
+                string uri = "https://halcyontransactions.azurewebsites.net/api/GetProjects?code=nC1K74Tegi0H1qWG0-jM5QEB2wk3Xn3z6vJf312P37zaAzFudxf1og==";
                 var stringContent = new StringContent(content, Encoding.UTF8, "application/json");
                 var stringResponse = await _client.PostAsync(uri, stringContent);
                 var rawResponse = stringResponse.Content.ReadAsStringAsync().Result;
-                var result = JsonConvert.DeserializeObject<List<OperationModel>>(rawResponse);
+                var result = JsonConvert.DeserializeObject<List<ProjectModel>>(rawResponse);
 
-                OperationModel emptyOperation = new OperationModel();
-                emptyOperation.Title = "Create New";
-                emptyOperation.RowKey = "1";
-                result.Add(emptyOperation);
+                ProjectModel emptyProject = new ProjectModel();
+                emptyProject.Title = "Create New";
+                emptyProject.RowKey = "1";
+                result.Add(emptyProject);
                 return result;
             }
             catch (Exception ex)
             {
-                return null;
+                List<ProjectModel> emptyProjectList = new List<ProjectModel>();
+                ProjectModel model = new ProjectModel();
+                model.Title = "Create New";
+                model.RowKey = "1";
+                emptyProjectList.Add(model);
+                return emptyProjectList;
             }
         }
 

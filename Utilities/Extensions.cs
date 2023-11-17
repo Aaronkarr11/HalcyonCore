@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace HalcyonCore.Utilities
 {
@@ -42,6 +43,30 @@ namespace HalcyonCore.Utilities
 				nums[i] = temp;
 			}
 			return nums;
+		}
+
+
+		public static string RemoveSpecialCharacters(string str)
+		{
+			try
+			{
+				StringBuilder sb = new StringBuilder();
+				foreach (char c in str)
+				{
+					if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '.' || c == '_')
+					{
+						sb.Append(c);
+					}
+				}
+				string appendedString = sb.ToString();
+				appendedString.Replace(" ", "");
+				return appendedString;
+			}
+			catch (Exception ex)
+			{
+				return "";
+			}
+
 		}
 	}
 }

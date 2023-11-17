@@ -8,9 +8,9 @@ namespace HalcyonCore.Interfaces
         Task<string> CreateRequestItem(RequestItemsTableTemplate requestItemRequest);
         Task<DashBoard> GetDashBoardData(string deviceName);
         Task<List<HouseHoldMember>> GetHouseHoldMembers(string deviceName);
-        Task<List<OperationModel>> GetOperationList(string deviceName);
+        Task<List<ProjectModel>> GetProjectList(string deviceName);
         Task<List<RequestItemsTableTemplate>> GetRequestItems(string deviceName);
-        Task<List<OperationHierarchy>> GetWorkItemHierarchy(string deviceName);
+        Task<List<ProjectHierarchy>> GetWorkItemHierarchy(string deviceName);
         Task<List<WorkTaskModel>> GetWorkTaskPrioritiesList(string deviceName);
         Task<string> DeleteRequestItem(RequestItemsTableTemplate requestItemRequest);
         Task<HttpResponseMessage> GetWorkItemHierarchyHttpResponseMessage(string deviceName);
