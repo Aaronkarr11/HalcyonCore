@@ -205,7 +205,8 @@ namespace HalcyonCore.SharedEntities
 		public string Title { get; set; }
 		public DateTime? StartDate { get; set; }
 		public DateTime? TargetDate { get; set; }
-		public string Description { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public string Description { get; set; }
 		public string LocationCategory { get; set; }
 		public string Severity { get; set; }
 		public int Priority { get; set; }
