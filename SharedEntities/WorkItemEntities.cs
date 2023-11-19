@@ -1,5 +1,6 @@
 ﻿using Azure;
 using Azure.Data.Tables;
+using System.Drawing;
 
 namespace HalcyonCore.SharedEntities
 {
@@ -110,6 +111,8 @@ namespace HalcyonCore.SharedEntities
 		public int Completed { get; set; }
 	}
 
+
+	//Model
 	public class WorkTaskModel : PersonDetails
 	{
 		public string PartitionKey { get; set; }
@@ -118,7 +121,8 @@ namespace HalcyonCore.SharedEntities
 		public string ParentRowKey { get; set; }
 		public string DeviceName { get; set; }
 		public string State { get; set; }
-		public string Title { get; set; }
+		public Color StateColor { get; set; }
+        public string Title { get; set; }
 		public string Risk { get; set; }
 		public int Effort { get; set; }
 		public int Priority { get; set; }

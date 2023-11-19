@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Text.RegularExpressions;
 
 namespace HalcyonCore.SharedEntities
@@ -17,7 +18,17 @@ namespace HalcyonCore.SharedEntities
             {
                 return "Pog";
             }
+        }
 
+        public static Color SetStateColor(string state)
+        {
+            return state switch
+            {
+                "New" => Color.FromArgb(255, 204, 0),
+                "In Progress" => Color.FromArgb(0, 72, 255),
+                "Done" => Color.FromArgb(0, 102, 0),
+                _ => Color.FromArgb(0, 72, 255),
+            };
         }
     }
 }
