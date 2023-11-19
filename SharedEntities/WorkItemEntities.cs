@@ -120,7 +120,8 @@ namespace HalcyonCore.SharedEntities
 		public string ParentPartitionKey { get; set; }
 		public string ParentRowKey { get; set; }
 		public string DeviceName { get; set; }
-		public string State { get; set; }
+        public string Assignment { get; set; }
+        public string State { get; set; }
 		public Microsoft.Maui.Graphics.Color StateColor { get; set; }
         public string Title { get; set; }
 		public string Risk { get; set; }
