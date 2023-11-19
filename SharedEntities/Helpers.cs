@@ -20,14 +20,14 @@ namespace HalcyonCore.SharedEntities
             }
         }
 
-        public static Color SetStateColor(string state)
+        public static Microsoft.Maui.Graphics.Color SetStateColor(string state)
         {
             return state switch
             {
-                "New" => Color.FromArgb(255, 204, 0),
-                "In Progress" => Color.FromArgb(0, 72, 255),
-                "Done" => Color.FromArgb(0, 102, 0),
-                _ => Color.FromArgb(0, 72, 255),
+                "New" => Microsoft.Maui.Graphics.Color.FromRgb(255, 204, 0),
+                "In Progress" => Microsoft.Maui.Graphics.Color.FromRgb(0, 72, 255),
+                "Done" => Microsoft.Maui.Graphics.Color.FromRgb(0, 102, 0),
+                _ => Microsoft.Maui.Graphics.Color.FromRgb(0, 72, 255),
             };
         }
     }

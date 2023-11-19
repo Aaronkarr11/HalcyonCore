@@ -11,6 +11,7 @@
 		<PackageReference Include="Dapper" Version="2.1.15" />
 		<PackageReference Include="DapperExtensions" Version="1.7.0" />
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0-preview3.23201.1" />
+		<PackageReference Include="Microsoft.Maui.Graphics" Version="8.0.3" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="NLog" Version="5.2.5" />
 		<PackageReference Include="System.Windows.Extensions" Version="8.0.0-rc.2.23479.6" />

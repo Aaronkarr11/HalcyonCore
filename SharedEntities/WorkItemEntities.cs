@@ -121,7 +121,7 @@ namespace HalcyonCore.SharedEntities
 		public string ParentRowKey { get; set; }
 		public string DeviceName { get; set; }
 		public string State { get; set; }
-		public Color StateColor { get; set; }
+		public Microsoft.Maui.Graphics.Color StateColor { get; set; }
         public string Title { get; set; }
 		public string Risk { get; set; }
 		public int Effort { get; set; }
