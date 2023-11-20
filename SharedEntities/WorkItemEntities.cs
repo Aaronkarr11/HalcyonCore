@@ -71,8 +71,8 @@ namespace HalcyonCore.SharedEntities
         public DateTime? StartDate { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? TargetDate { get; set; }
-		public int ConvertedDateTimrStamp { get; set; }
-		public string Description { get; set; }
+        public long ConvertedDateTimeStamp { get; set; }
+        public string Description { get; set; }
 		public string LocationCategory { get; set; }
 		public string Severity { get; set; }
 		public int Priority { get; set; }
@@ -105,7 +105,7 @@ namespace HalcyonCore.SharedEntities
 		public DateTime? StartDate { get; set; }
 		public DateTime? TargetDate { get; set; }
         public DateTime? CreatedDate { get; set; }
-        public int ConvertedDateTimrStamp { get; set; }
+        public long ConvertedDateTimeStamp { get; set; }
         public string Description { get; set; }
 		public string LocationCategory { get; set; }
 		public string Severity { get; set; }
@@ -196,7 +196,7 @@ namespace HalcyonCore.SharedEntities
 		public DateTime? StartDate { get; set; }
 		public DateTime? TargetDate { get; set; }
         public DateTime? CreatedDate { get; set; }
-        public int ConvertedDateTimrStamp { get; set; }
+        public long ConvertedDateTimeStamp { get; set; }
         public string Description { get; set; }
 		public string LocationCategory { get; set; }
 		public string Severity { get; set; }
@@ -214,7 +214,7 @@ namespace HalcyonCore.SharedEntities
 		public DateTime? StartDate { get; set; }
 		public DateTime? TargetDate { get; set; }
         public DateTime? CreatedDate { get; set; }
-        public int ConvertedDateTimrStamp { get; set; }
+        public long ConvertedDateTimeStamp { get; set; }
         public string Description { get; set; }
 		public string LocationCategory { get; set; }
 		public string Severity { get; set; }
