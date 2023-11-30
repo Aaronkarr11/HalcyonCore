@@ -113,9 +113,21 @@ namespace HalcyonCore.SharedEntities
 		public int Completed { get; set; }
 	}
 
+    public class RequestItemsModel
+    {
+        public string DeviceName { get; set; }
+        public string Title { get; set; }
+        public string ReasonDescription { get; set; }
+        public DateTime? DesiredDate { get; set; }
+        public string DesiredDateDisplay { get; set; }
+        public int IsFulfilled { get; set; }
+        public string PartitionKey { get; set; }
+        public string RowKey { get; set; }
+    }
 
-	//Model
-	public class WorkTaskModel : PersonDetails
+
+    //Model
+    public class WorkTaskModel : PersonDetails
 	{
 		public string PartitionKey { get; set; }
 		public string RowKey { get; set; }
