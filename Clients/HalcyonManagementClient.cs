@@ -14,11 +14,11 @@ namespace HalcyonCore.Clients
             _client = client;
         }
 
-        public async Task<List<RequestItemsTableTemplate>> GetRequestItems(string deviceName)
+        public async Task<List<RequestItemsModel>> GetRequestItems(string deviceName)
         {
             try
             {
-                RequestItemsTableTemplate model = new RequestItemsTableTemplate();
+                RequestItemsModel model = new RequestItemsModel();
                 model.DeviceName = deviceName;
                 string content = JsonConvert.SerializeObject(model);
 
@@ -27,7 +27,7 @@ namespace HalcyonCore.Clients
                 var stringResponse = await _client.PostAsync(uri, stringContent);
                 var rawResponse = stringResponse.Content.ReadAsStringAsync().Result;
 
-                var filteredResult = JsonConvert.DeserializeObject<List<RequestItemsTableTemplate>>(rawResponse).Where(o => o.IsFulfilled == 0);
+                var filteredResult = JsonConvert.DeserializeObject<List<RequestItemsModel>>(rawResponse).Where(o => o.IsFulfilled == 0);
                 return filteredResult.ToList();
             }
             catch (Exception ex)
