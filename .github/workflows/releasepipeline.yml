@@ -1,23 +1,44 @@
-name: Release to NuGet
+name: Push a NuGet package to Azure Artifacts
 
 on:
-  release:
-    types: [published]
-    
+  push:
+    branches:
+      - main
+
+env:
+  AZURE_ARTIFACTS_FEED_URL: 'https://pkgs.dev.azure.com/HalcyonSoft/Software/_packaging/HalcyonSoft/nuget/v3/index.json'
+  BUILD_CONFIGURATION: 'Release'
+  DOTNET_VERSION: '6.x'
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v1
-    - name: Build
-      run: dotnet build -c Release
-    - name: Test
-      run: dotnet test -c Release --no-build
-    - name: Pack nugets
-      run: dotnet pack -c Release --no-build --output .
-    - name: Push to NuGet
-      run: dotnet nuget push "*.nupkg" --api-key ${{secrets.nuget_api_key}} --source https://pkgs.dev.azure.com/HalcyonSoft/Software/_packaging/HalcyonSoft/nuget/v3/index.json
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+      - name: Build and test
+        run: |
+          dotnet restore
+          dotnet build --configuration '${{ env.BUILD_CONFIGURATION }}'
+          dotnet test --configuration '${{ env.BUILD_CONFIGURATION }}'
+
+  az-artifacts-build-and-deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.AZURE_DEVOPS_TOKEN }}
+      - name: Build and publish
+        run: |
+          dotnet restore
+          dotnet build --configuration '${{ env.BUILD_CONFIGURATION }}'
+          dotnet pack -c '${{ env.BUILD_CONFIGURATION }}' --version-suffix $GITHUB_RUN_ID
+          dotnet nuget push --api-key AzureArtifacts bin/Release/*.nupkg
