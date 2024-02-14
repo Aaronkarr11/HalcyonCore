@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  AZURE_ARTIFACTS_FEED_URL: https://pkgs.dev.azure.com/HalcyonSoft/Software/_packaging/HalcyonSoft/nuget/v3/index.json
+  FEED_URL: https://nuget.pkg.github.com/Aaronkarr11/HalcyonCore/index.json
   BUILD_CONFIGURATION: 'Release'    # set this to the appropriate build configurations
   DOTNET_VERSION: '6.x' 
 
@@ -42,9 +42,9 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
-          source-url: ${{ env.AZURE_ARTIFACTS_FEED_URL }}
+          source-url: ${{ env.FEED_URL }}
         env:
-          NUGET_AUTH_TOKEN: ${{ secrets.AZURE_DEVOPS_TOKEN }} 
+          NUGET_AUTH_TOKEN: ${{ secrets.HALCYONCORE_NUGET_FEED }} 
 
       # Run dotnet build and package
       - name: dotnet build and publish
