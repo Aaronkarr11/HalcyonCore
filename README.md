@@ -8,9 +8,12 @@
 Core libraires that are used across Halcyon projects. This library is pushed and packed to a private NuGet.
 
 ### Dependencies
-.NET 6 is a dependency for this project
+.NET 8 is a dependency for this project
 
 ### Versioning 
+
+2/11/2024 - 2.1.0
+- Upgraded to .NET 8
 
 2/11/2024 - 2.0.0
 - Initial upload to GitHub
