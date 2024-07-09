@@ -8,7 +8,7 @@ on:
 env:
   FEED_URL: https://nuget.pkg.github.com/Aaronkarr11/index.json
   BUILD_CONFIGURATION: 'Release'    # set this to the appropriate build configurations
-  DOTNET_VERSION: '6.x' 
+  DOTNET_VERSION: '8.x' 
 
 jobs:
   build:
