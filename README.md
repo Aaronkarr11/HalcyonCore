@@ -12,7 +12,8 @@ Core libraires that are used across Halcyon projects. This library is pushed and
 
 ### Versioning 
 
-2/11/2024 - 2.1.0
+7/17/2024 - 2.1.0
+- updated endpoints
 - Upgraded to .NET 8
 
 2/11/2024 - 2.0.0
