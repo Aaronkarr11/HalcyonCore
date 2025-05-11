@@ -6,6 +6,7 @@ namespace HalcyonCore.Utilities
 {
     public static class Configuration
     {
+        //generates a new random string
 		public static string CreateRandomNumericString()
 		{
 			var rand = new Random();
