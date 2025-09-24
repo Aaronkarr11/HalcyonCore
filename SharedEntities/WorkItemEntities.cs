@@ -150,6 +150,25 @@ namespace HalcyonCore.SharedEntities
 		public int Completed { get; set; }
 	}
 
+    public class WMScheduleModel
+    {
+        public string DeviceName { get; set; }
+        public DateTime? StartingDate { get; set; }
+        public string PartitionKey { get; set; }
+        public string RowKey { get; set; }
+    }
+
+    public class WMScheduleTableTemplate : ITableEntity
+    {
+        public string DeviceName { get; set; }
+        public DateTime? StartingDate { get; set; }
+        public string PartitionKey { get; set; }
+        public string RowKey { get; set; }
+        public DateTimeOffset? Timestamp { get; set; }
+        public ETag ETag { get; set; }
+    }
+
+
     public class ErrorLogModel
     {
         public string MethodName { get; set; }
@@ -303,4 +322,14 @@ namespace HalcyonCore.SharedEntities
         public DateTimeOffset? Timestamp { get; set; }
         public ETag ETag { get; set; }
     }
+
+
+    public class WMScheduleTableTemplate
+    {
+        public string DeviceName { get; set; }
+        public DateTime? StartingDate { get; set; }
+        public string PartitionKey { get; set; }
+        public string RowKey { get; set; }
+    }
+
 }
