@@ -324,12 +324,4 @@ namespace HalcyonCore.SharedEntities
     }
 
 
-    public class WMScheduleTableTemplate
-    {
-        public string DeviceName { get; set; }
-        public DateTime? StartingDate { get; set; }
-        public string PartitionKey { get; set; }
-        public string RowKey { get; set; }
-    }
-
 }
