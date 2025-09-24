@@ -158,7 +158,7 @@ namespace HalcyonCore.SharedEntities
         public string RowKey { get; set; }
     }
 
-    public class WMScheduleTableTemplate : ITableEntity
+    public class WMScheduleTableEntity : ITableEntity
     {
         public string DeviceName { get; set; }
         public DateTime? StartingDate { get; set; }
@@ -167,6 +167,8 @@ namespace HalcyonCore.SharedEntities
         public DateTimeOffset? Timestamp { get; set; }
         public ETag ETag { get; set; }
     }
+
+
 
 
     public class ErrorLogModel
